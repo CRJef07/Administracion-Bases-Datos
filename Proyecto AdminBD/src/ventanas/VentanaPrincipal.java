@@ -42,10 +42,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pnlPrincipal = new javax.swing.JPanel();
         btnTablespaces = new javax.swing.JButton();
-        btnTuning = new javax.swing.JButton();
+        btnTunning = new javax.swing.JButton();
         btnPerformance = new javax.swing.JButton();
         btnAuditoria = new javax.swing.JButton();
-        btnRoles = new javax.swing.JButton();
+        btnUsuarios = new javax.swing.JButton();
         btnRespaldos = new javax.swing.JButton();
         btnRecuperar = new javax.swing.JButton();
         btnParametros = new javax.swing.JButton();
@@ -71,13 +71,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         pnlPrincipal.add(btnTablespaces, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 170, 40));
 
-        btnTuning.setText("TUNING");
-        btnTuning.addActionListener(new java.awt.event.ActionListener() {
+        btnTunning.setText("TUNNING");
+        btnTunning.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTuningActionPerformed(evt);
+                btnTunningActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTuning, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 170, 40));
+        pnlPrincipal.add(btnTunning, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 170, 40));
 
         btnPerformance.setText("PERFORMANCE");
         btnPerformance.addActionListener(new java.awt.event.ActionListener() {
@@ -95,13 +95,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         pnlPrincipal.add(btnAuditoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 170, 40));
 
-        btnRoles.setText("ROLES");
-        btnRoles.addActionListener(new java.awt.event.ActionListener() {
+        btnUsuarios.setText("USUARIOS");
+        btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRolesActionPerformed(evt);
+                btnUsuariosActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 170, 40));
+        pnlPrincipal.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 170, 40));
 
         btnRespaldos.setText("RESPALDOS");
         btnRespaldos.addActionListener(new java.awt.event.ActionListener() {
@@ -179,10 +179,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ShowPanel(panel);
     }//GEN-LAST:event_btnTablespacesActionPerformed
 
-    private void btnTuningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuningActionPerformed
-        PanelTuning panel = new PanelTuning(this.controlador, this.usuario, this.password);
+    private void btnTunningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunningActionPerformed
+        PanelTunning panel = new PanelTunning(this.controlador, this.usuario, this.password);
         ShowPanel(panel);
-    }//GEN-LAST:event_btnTuningActionPerformed
+    }//GEN-LAST:event_btnTunningActionPerformed
 
     private void btnPerformanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerformanceActionPerformed
         PanelPerformance panel = new PanelPerformance(this.controlador, this.usuario, this.password);
@@ -194,10 +194,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ShowPanel(panel);
     }//GEN-LAST:event_btnAuditoriaActionPerformed
 
-    private void btnRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolesActionPerformed
-        PanelRoles panel = new PanelRoles(this.controlador, this.usuario, this.password);
+    private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
+        PanelUsuarios panel = new PanelUsuarios(this.controlador, this.usuario, this.password);
         ShowPanel(panel);
-    }//GEN-LAST:event_btnRolesActionPerformed
+    }//GEN-LAST:event_btnUsuariosActionPerformed
 
     private void btnRespaldosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRespaldosActionPerformed
         PanelCrearRespaldos panel = new PanelCrearRespaldos(this.controlador, this.usuario, this.password);
@@ -237,9 +237,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnPerformance;
     private javax.swing.JButton btnRecuperar;
     private javax.swing.JButton btnRespaldos;
-    private javax.swing.JButton btnRoles;
     private javax.swing.JButton btnTablespaces;
-    private javax.swing.JButton btnTuning;
+    private javax.swing.JButton btnTunning;
+    private javax.swing.JButton btnUsuarios;
     private javax.swing.JPanel pnlContenido;
     private javax.swing.JPanel pnlPrincipal;
     // End of variables declaration//GEN-END:variables

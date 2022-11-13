@@ -2,13 +2,13 @@ package ventanas;
 
 import controlador.Controlador;
 
-public class PanelRoles extends javax.swing.JPanel {
+public class PanelUsuarios extends javax.swing.JPanel {
 
     Controlador controlador = null;
     private String usuario = null;
     private String password = null;
 
-    public PanelRoles(Controlador controlador, String usuario, String password) {
+    public PanelUsuarios(Controlador controlador, String usuario, String password) {
         this.controlador = controlador;
         this.usuario = usuario;
         this.password = password;
