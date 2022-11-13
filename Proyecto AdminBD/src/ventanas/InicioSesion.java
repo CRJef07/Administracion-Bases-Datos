@@ -29,6 +29,7 @@ public class InicioSesion extends javax.swing.JFrame {
         if (rs != null) {
             try {
                 inputUsuarios.removeAllItems();
+                inputPassword.setText("root123");
 
                 while (rs.next()) {
                     inputUsuarios.addItem(rs.getString(1));
@@ -125,7 +126,11 @@ public class InicioSesion extends javax.swing.JFrame {
         String pass = String.valueOf(inputPassword.getPassword());
 
         if (controlador.getConexion(user, pass)) {
-            JOptionPane.showMessageDialog(null, "Correcto!");
+            VentanaPrincipal ventana = new VentanaPrincipal(controlador, user, pass);
+            ventana.IniciarVentana();
+            //JOptionPane.showMessageDialog(null, "Correcto!");
+            this.dispose();
+
         } else {
             JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error al iniciar sesión", JOptionPane.ERROR_MESSAGE);
         }
