@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Controlador {
 
@@ -21,7 +19,6 @@ public class Controlador {
 
     public boolean getConexion(String user, String pass) {
         try {
-
             if (user.equals("sys") || user.equals("SYS") || user.equals("SYSTEM") || user.equals("system")) {
                 user = user + " as sysdba";
             }
@@ -43,7 +40,7 @@ public class Controlador {
         return false;
     }
 
-    public boolean conectar(String user, String pass) {
+    /* public boolean conectar(String user, String pass) {
         try {
             if (user.equals("sys") || user == "SYSTEM") {
                 user = user + " as sysdba";
@@ -57,17 +54,13 @@ public class Controlador {
 
             } else {
                 System.err.println("Conexion fallida");
-
-                return false;
             }
 
         } catch (Exception e) {
             System.err.println("Exception:  " + e);
         }
-
         return false;
-    }
-
+    }*/
     public ResultSet cargarUsuario() {
         String query = "SELECT USERNAME FROM DBA_USERS";
 

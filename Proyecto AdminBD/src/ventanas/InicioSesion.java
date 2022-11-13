@@ -24,7 +24,7 @@ public class InicioSesion extends javax.swing.JFrame {
     }
 
     public void cargarUsuarios() {
-        controlador.conectar("sys", "root123");
+        controlador.getConexion("sys", "root123");
         ResultSet rs = controlador.cargarUsuario();
         if (rs != null) {
             try {
@@ -34,7 +34,7 @@ public class InicioSesion extends javax.swing.JFrame {
                     inputUsuarios.addItem(rs.getString(1));
                 }
 
-                inputUsuarios.setSelectedIndex(-1);
+                inputUsuarios.setSelectedIndex(0);
                 controlador.cerrar();
 
             } catch (SQLException e) {
@@ -57,7 +57,6 @@ public class InicioSesion extends javax.swing.JFrame {
         lblPassword = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         setResizable(false);
 
         pnlInicioSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -125,7 +124,7 @@ public class InicioSesion extends javax.swing.JFrame {
         String user = (String) inputUsuarios.getSelectedItem();
         String pass = String.valueOf(inputPassword.getPassword());
 
-        if (controlador.conectar(user, pass)) {
+        if (controlador.getConexion(user, pass)) {
             JOptionPane.showMessageDialog(null, "Correcto!");
         } else {
             JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error al iniciar sesión", JOptionPane.ERROR_MESSAGE);
