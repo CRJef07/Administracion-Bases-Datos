@@ -22,7 +22,10 @@ public class PanelTunning extends javax.swing.JPanel {
         this.controlador = controlador;
         this.usuario = usuario;
         this.password = password;
+
         initComponents();
+        cargarUsuarios();
+        cargarTablas();
     }
 
     public void cargarUsuarios() {
