@@ -21,6 +21,7 @@ public class PanelPerformance extends javax.swing.JPanel {
 
         lblTitulo = new javax.swing.JLabel();
 
+        setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         setMinimumSize(new java.awt.Dimension(560, 560));
         setPreferredSize(new java.awt.Dimension(560, 560));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -30,7 +31,7 @@ public class PanelPerformance extends javax.swing.JPanel {
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Tablespaces");
         lblTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 600));
+        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
