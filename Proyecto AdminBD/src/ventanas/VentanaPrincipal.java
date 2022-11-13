@@ -20,7 +20,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     public void IniciarVentana() {
         setTitle("Pantalla Principal");
-        this.setSize(800, 620);
+        this.setSize(1020, 640);
         setDefaultCloseOperation(EXIT_ON_CLOSE);//javax.​swing.​WindowConstants
         setLocationRelativeTo(null);
         setResizable(false);
@@ -28,7 +28,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     private void ShowPanel(JPanel panel) {
-        panel.setSize(560, 600);
+        panel.setSize(780, 600);
         panel.setLocation(0, 0);
         pnlContenido.removeAll();
         pnlContenido.add(panel, BorderLayout.CENTER);
@@ -54,10 +54,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pnlContenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
-        setSize(new java.awt.Dimension(800, 600));
+        setSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlPrincipal.setMinimumSize(new java.awt.Dimension(220, 600));
@@ -136,32 +135,40 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         pnlPrincipal.add(btnAdminArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 170, 40));
 
+        btnCerrarSesion.setBackground(new java.awt.Color(255, 255, 255));
+        btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(255, 0, 51));
         btnCerrarSesion.setText("CERRAR SESIÓN");
+        btnCerrarSesion.setBorder(null);
+        btnCerrarSesion.setBorderPainted(false);
+        btnCerrarSesion.setContentAreaFilled(false);
+        btnCerrarSesion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 170, 40));
+        pnlPrincipal.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 110, -1));
 
         getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
         pnlPrincipal.getAccessibleContext().setAccessibleName("");
 
         pnlContenido.setAlignmentX(0.0F);
         pnlContenido.setAlignmentY(0.0F);
+        pnlContenido.setMinimumSize(new java.awt.Dimension(780, 600));
 
         javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
         pnlContenido.setLayout(pnlContenidoLayout);
         pnlContenidoLayout.setHorizontalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGap(0, 780, Short.MAX_VALUE)
         );
         pnlContenidoLayout.setVerticalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 580, 600));
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 780, 600));
 
         pack();
         setLocationRelativeTo(null);
