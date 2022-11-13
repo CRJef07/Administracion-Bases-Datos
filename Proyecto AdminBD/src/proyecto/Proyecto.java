@@ -1,6 +1,16 @@
 package proyecto;
+
+import ventanas.InicioSesion;
+
+/*
+-Jefté Andrés Vega Hidalgo
+-Hillary Cruz Valenzuela
+-Jose Rodriguez Martinez
+ */
 public class Proyecto {
+
     public static void main(String[] args) {
-        System.out.println("Hola mundo");
-    }    
+        InicioSesion ventana = new InicioSesion();
+        ventana.IniciarVentana();
+    }
 }
