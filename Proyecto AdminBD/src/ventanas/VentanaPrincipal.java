@@ -20,18 +20,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     public void IniciarVentana() {
         setTitle("Pantalla Principal");
-        setSize(220, 600);
+        this.setSize(800, 620);
         setDefaultCloseOperation(EXIT_ON_CLOSE);//javax.​swing.​WindowConstants
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-
-        PnlPrueba1 panel = new PnlPrueba1();
-        ShowPanel(panel);
     }
 
     private void ShowPanel(JPanel panel) {
-        panel.setSize(560, 560);
+        panel.setSize(560, 600);
         panel.setLocation(0, 0);
         pnlContenido.removeAll();
         pnlContenido.add(panel, BorderLayout.CENTER);
@@ -46,24 +43,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pnlPrincipal = new javax.swing.JPanel();
         btnTablespaces = new javax.swing.JButton();
         btnTuning = new javax.swing.JButton();
-        btnTablespaces2 = new javax.swing.JButton();
-        btnTablespaces3 = new javax.swing.JButton();
-        btnTablespaces4 = new javax.swing.JButton();
-        btnTablespaces5 = new javax.swing.JButton();
-        btnTablespaces6 = new javax.swing.JButton();
-        btnTablespaces7 = new javax.swing.JButton();
-        btnTablespaces8 = new javax.swing.JButton();
+        btnPerformance = new javax.swing.JButton();
+        btnAuditoria = new javax.swing.JButton();
+        btnRoles = new javax.swing.JButton();
+        btnRespaldos = new javax.swing.JButton();
+        btnRecuperar = new javax.swing.JButton();
+        btnParametros = new javax.swing.JButton();
+        btnAdminArchivos = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         pnlContenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 560));
-        setPreferredSize(new java.awt.Dimension(800, 560));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
-        setSize(new java.awt.Dimension(800, 560));
+        setSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlPrincipal.setMinimumSize(new java.awt.Dimension(220, 560));
-        pnlPrincipal.setPreferredSize(new java.awt.Dimension(220, 560));
+        pnlPrincipal.setMinimumSize(new java.awt.Dimension(220, 600));
+        pnlPrincipal.setPreferredSize(new java.awt.Dimension(220, 600));
         pnlPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnTablespaces.setText("TABLESPACES");
@@ -72,7 +70,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btnTablespacesActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTablespaces, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 170, 40));
+        pnlPrincipal.add(btnTablespaces, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 170, 40));
 
         btnTuning.setText("TUNING");
         btnTuning.addActionListener(new java.awt.event.ActionListener() {
@@ -80,131 +78,160 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btnTuningActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTuning, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 170, 40));
+        pnlPrincipal.add(btnTuning, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 170, 40));
 
-        btnTablespaces2.setText("PERFORMANCE");
-        btnTablespaces2.addActionListener(new java.awt.event.ActionListener() {
+        btnPerformance.setText("PERFORMANCE");
+        btnPerformance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTablespaces2ActionPerformed(evt);
+                btnPerformanceActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTablespaces2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 170, 40));
+        pnlPrincipal.add(btnPerformance, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, 40));
 
-        btnTablespaces3.setText("AUDITORIA");
-        btnTablespaces3.addActionListener(new java.awt.event.ActionListener() {
+        btnAuditoria.setText("AUDITORIA");
+        btnAuditoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTablespaces3ActionPerformed(evt);
+                btnAuditoriaActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTablespaces3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 170, 40));
+        pnlPrincipal.add(btnAuditoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 170, 40));
 
-        btnTablespaces4.setText("ROLES");
-        btnTablespaces4.addActionListener(new java.awt.event.ActionListener() {
+        btnRoles.setText("ROLES");
+        btnRoles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTablespaces4ActionPerformed(evt);
+                btnRolesActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTablespaces4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 170, 40));
+        pnlPrincipal.add(btnRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 170, 40));
 
-        btnTablespaces5.setText("RESPALDOS");
-        btnTablespaces5.addActionListener(new java.awt.event.ActionListener() {
+        btnRespaldos.setText("RESPALDOS");
+        btnRespaldos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTablespaces5ActionPerformed(evt);
+                btnRespaldosActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTablespaces5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 170, 40));
+        pnlPrincipal.add(btnRespaldos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 170, 40));
 
-        btnTablespaces6.setText("RECUPERACIÓN");
-        btnTablespaces6.addActionListener(new java.awt.event.ActionListener() {
+        btnRecuperar.setText("RECUPERACIÓN");
+        btnRecuperar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTablespaces6ActionPerformed(evt);
+                btnRecuperarActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTablespaces6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 170, 40));
+        pnlPrincipal.add(btnRecuperar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 170, 40));
 
-        btnTablespaces7.setText("PARÁMETROS");
-        btnTablespaces7.addActionListener(new java.awt.event.ActionListener() {
+        btnParametros.setText("PARÁMETROS");
+        btnParametros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTablespaces7ActionPerformed(evt);
+                btnParametrosActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTablespaces7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 170, 40));
+        pnlPrincipal.add(btnParametros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 170, 40));
 
-        btnTablespaces8.setText("ADMIN ARCHIVOS");
-        btnTablespaces8.addActionListener(new java.awt.event.ActionListener() {
+        btnAdminArchivos.setText("ADMIN ARCHIVOS");
+        btnAdminArchivos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTablespaces8ActionPerformed(evt);
+                btnAdminArchivosActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnTablespaces8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 170, 40));
+        pnlPrincipal.add(btnAdminArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 170, 40));
 
-        getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 560));
+        btnCerrarSesion.setText("CERRAR SESIÓN");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        pnlPrincipal.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 170, 40));
+
+        getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
         pnlPrincipal.getAccessibleContext().setAccessibleName("");
+
+        pnlContenido.setAlignmentX(0.0F);
+        pnlContenido.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
         pnlContenido.setLayout(pnlContenidoLayout);
         pnlContenidoLayout.setHorizontalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGap(0, 580, Short.MAX_VALUE)
         );
         pnlContenidoLayout.setVerticalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 560, 560));
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 580, 600));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTablespacesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablespacesActionPerformed
-
+        PanelTablespaces panel = new PanelTablespaces(this.controlador, this.usuario, this.password);
+        ShowPanel(panel);
     }//GEN-LAST:event_btnTablespacesActionPerformed
 
     private void btnTuningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuningActionPerformed
-
+        PanelTuning panel = new PanelTuning(this.controlador, this.usuario, this.password);
+        ShowPanel(panel);
     }//GEN-LAST:event_btnTuningActionPerformed
 
-    private void btnTablespaces2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablespaces2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTablespaces2ActionPerformed
-
-    private void btnTablespaces3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablespaces3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTablespaces3ActionPerformed
-
-    private void btnTablespaces4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablespaces4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTablespaces4ActionPerformed
-
-    private void btnTablespaces5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablespaces5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTablespaces5ActionPerformed
-
-    private void btnTablespaces6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablespaces6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTablespaces6ActionPerformed
-
-    private void btnTablespaces7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablespaces7ActionPerformed
-        PnlPrueba1 panel = new PnlPrueba1();
+    private void btnPerformanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerformanceActionPerformed
+        PanelPerformance panel = new PanelPerformance(this.controlador, this.usuario, this.password);
         ShowPanel(panel);
-    }//GEN-LAST:event_btnTablespaces7ActionPerformed
+    }//GEN-LAST:event_btnPerformanceActionPerformed
 
-    private void btnTablespaces8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablespaces8ActionPerformed
-        PnlPrueba2 panel = new PnlPrueba2();
+    private void btnAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAuditoriaActionPerformed
+        PanelAuditoria panel = new PanelAuditoria(this.controlador, this.usuario, this.password);
         ShowPanel(panel);
-    }//GEN-LAST:event_btnTablespaces8ActionPerformed
+    }//GEN-LAST:event_btnAuditoriaActionPerformed
+
+    private void btnRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolesActionPerformed
+        PanelRoles panel = new PanelRoles(this.controlador, this.usuario, this.password);
+        ShowPanel(panel);
+    }//GEN-LAST:event_btnRolesActionPerformed
+
+    private void btnRespaldosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRespaldosActionPerformed
+        PanelCrearRespaldos panel = new PanelCrearRespaldos(this.controlador, this.usuario, this.password);
+        ShowPanel(panel);
+    }//GEN-LAST:event_btnRespaldosActionPerformed
+
+    private void btnRecuperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarActionPerformed
+        PanelRecuperarRespaldos panel = new PanelRecuperarRespaldos(this.controlador, this.usuario, this.password);
+        ShowPanel(panel);
+    }//GEN-LAST:event_btnRecuperarActionPerformed
+
+    private void btnParametrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParametrosActionPerformed
+        PanelParametros panel = new PanelParametros(this.controlador, this.usuario, this.password);
+        ShowPanel(panel);
+    }//GEN-LAST:event_btnParametrosActionPerformed
+
+    private void btnAdminArchivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminArchivosActionPerformed
+        PanelAdminArchivos panel = new PanelAdminArchivos(this.controlador, this.usuario, this.password);
+        ShowPanel(panel);
+    }//GEN-LAST:event_btnAdminArchivosActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        controlador.cerrar();
+
+        InicioSesion ventana = new InicioSesion();
+        ventana.IniciarVentana();
+
+        this.dispose();
+
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdminArchivos;
+    private javax.swing.JButton btnAuditoria;
+    private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JButton btnParametros;
+    private javax.swing.JButton btnPerformance;
+    private javax.swing.JButton btnRecuperar;
+    private javax.swing.JButton btnRespaldos;
+    private javax.swing.JButton btnRoles;
     private javax.swing.JButton btnTablespaces;
-    private javax.swing.JButton btnTablespaces2;
-    private javax.swing.JButton btnTablespaces3;
-    private javax.swing.JButton btnTablespaces4;
-    private javax.swing.JButton btnTablespaces5;
-    private javax.swing.JButton btnTablespaces6;
-    private javax.swing.JButton btnTablespaces7;
-    private javax.swing.JButton btnTablespaces8;
     private javax.swing.JButton btnTuning;
     private javax.swing.JPanel pnlContenido;
     private javax.swing.JPanel pnlPrincipal;

@@ -40,27 +40,6 @@ public class Controlador {
         return false;
     }
 
-    /* public boolean conectar(String user, String pass) {
-        try {
-            if (user.equals("sys") || user == "SYSTEM") {
-                user = user + " as sysdba";
-            }
-            Class.forName(DRIVER);
-
-            conector = DriverManager.getConnection(URL, user, pass);
-
-            if (conector != null) {
-                return true;
-
-            } else {
-                System.err.println("Conexion fallida");
-            }
-
-        } catch (Exception e) {
-            System.err.println("Exception:  " + e);
-        }
-        return false;
-    }*/
     public ResultSet cargarUsuario() {
         String query = "SELECT USERNAME FROM DBA_USERS";
 

@@ -2,13 +2,13 @@ package ventanas;
 
 import controlador.Controlador;
 
-public class PanelTablespaces extends javax.swing.JPanel {
+public class PanelAdminArchivos extends javax.swing.JPanel {
 
     Controlador controlador = null;
     private String usuario = null;
     private String password = null;
 
-    public PanelTablespaces(Controlador controlador, String usuario, String password) {
+    public PanelAdminArchivos(Controlador controlador, String usuario, String password) {
         this.controlador = controlador;
         this.usuario = usuario;
         this.password = password;
@@ -27,7 +27,7 @@ public class PanelTablespaces extends javax.swing.JPanel {
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Tablespaces");
+        lblTitulo.setText("Administrar Archivos");
         add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 30));
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
