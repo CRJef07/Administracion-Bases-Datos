@@ -242,6 +242,7 @@ public class PanelUsuarios extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCrearRolActionPerformed
 
     private void btnRemoverRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverRolActionPerformed
+        controlador.getConexion(usuario, password);
         if (controlador.revocarRolUsuario(txtNombreRol1.getText(), comboUsuarios.getSelectedItem().toString())) {
             JOptionPane.showMessageDialog(null, "El rol fue removido con exito", "", JOptionPane.INFORMATION_MESSAGE);
         } else {
@@ -250,6 +251,7 @@ public class PanelUsuarios extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRemoverRolActionPerformed
 
     private void btnAsignarRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarRolActionPerformed
+        controlador.getConexion(usuario, password);
         if (controlador.otorgarRolUsuario(txtNombreRol1.getText(), comboUsuarios.getSelectedItem().toString())) {
             JOptionPane.showMessageDialog(null, "El rol fue asignado con exito", "", JOptionPane.INFORMATION_MESSAGE);
         } else {
