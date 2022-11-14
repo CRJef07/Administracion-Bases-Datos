@@ -123,6 +123,7 @@ public class PanelCrearRespaldos extends javax.swing.JPanel {
             e.printStackTrace();
             System.exit(-1);
         }
+        btnCrear.setEnabled(true);
     }
     
     public boolean validaciones() {

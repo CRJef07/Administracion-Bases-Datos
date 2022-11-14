@@ -146,6 +146,7 @@ public class PanelAuditoria extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
 
+        setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         setMinimumSize(new java.awt.Dimension(560, 560));
         setPreferredSize(new java.awt.Dimension(560, 560));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

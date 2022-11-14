@@ -145,16 +145,16 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="btnParametros">
+        <Component class="javax.swing.JButton" name="btnOtros">
           <Properties>
-            <Property name="text" type="java.lang.String" value="PAR&#xc1;METROS"/>
+            <Property name="text" type="java.lang.String" value="OTROS"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnParametrosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOtrosActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="480" width="170" height="40"/>
+              <AbsoluteConstraints x="20" y="540" width="170" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -167,7 +167,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="540" width="170" height="40"/>
+              <AbsoluteConstraints x="20" y="480" width="170" height="40"/>
             </Constraint>
           </Constraints>
         </Component>

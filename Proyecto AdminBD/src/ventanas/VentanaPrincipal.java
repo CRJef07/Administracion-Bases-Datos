@@ -49,7 +49,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnUsuarios = new javax.swing.JButton();
         btnRespaldos = new javax.swing.JButton();
         btnRecuperar = new javax.swing.JButton();
-        btnParametros = new javax.swing.JButton();
+        btnOtros = new javax.swing.JButton();
         btnAdminArchivos = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         pnlContenido = new javax.swing.JPanel();
@@ -120,13 +120,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         pnlPrincipal.add(btnRecuperar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 170, 40));
 
-        btnParametros.setText("PARÁMETROS");
-        btnParametros.addActionListener(new java.awt.event.ActionListener() {
+        btnOtros.setText("OTROS");
+        btnOtros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnParametrosActionPerformed(evt);
+                btnOtrosActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnParametros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 170, 40));
+        pnlPrincipal.add(btnOtros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 170, 40));
 
         btnAdminArchivos.setText("ADMIN ARCHIVOS");
         btnAdminArchivos.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +134,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btnAdminArchivosActionPerformed(evt);
             }
         });
-        pnlPrincipal.add(btnAdminArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 170, 40));
+        pnlPrincipal.add(btnAdminArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 170, 40));
 
         btnCerrarSesion.setBackground(new java.awt.Color(255, 255, 255));
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -210,10 +210,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ShowPanel(panel);
     }//GEN-LAST:event_btnRecuperarActionPerformed
 
-    private void btnParametrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParametrosActionPerformed
-        PanelParametros panel = new PanelParametros(this.controlador, this.usuario, this.password);
+    private void btnOtrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtrosActionPerformed
+        PanelOtros panel = new PanelOtros(this.controlador, this.usuario, this.password);
         ShowPanel(panel);
-    }//GEN-LAST:event_btnParametrosActionPerformed
+    }//GEN-LAST:event_btnOtrosActionPerformed
 
     private void btnAdminArchivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminArchivosActionPerformed
         PanelAdminArchivos panel = new PanelAdminArchivos(this.controlador, this.usuario, this.password);
@@ -234,7 +234,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnAdminArchivos;
     private javax.swing.JButton btnAuditoria;
     private javax.swing.JButton btnCerrarSesion;
-    private javax.swing.JButton btnParametros;
+    private javax.swing.JButton btnOtros;
     private javax.swing.JButton btnPerformance;
     private javax.swing.JButton btnRecuperar;
     private javax.swing.JButton btnRespaldos;

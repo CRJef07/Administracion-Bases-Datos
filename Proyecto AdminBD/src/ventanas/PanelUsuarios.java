@@ -107,6 +107,7 @@ public class PanelUsuarios extends javax.swing.JPanel {
         txtNombreUsuario = new javax.swing.JTextField();
         btnCrearUsuario = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         setMinimumSize(new java.awt.Dimension(560, 560));
         setPreferredSize(new java.awt.Dimension(560, 560));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

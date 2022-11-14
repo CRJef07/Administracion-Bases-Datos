@@ -126,8 +126,7 @@ public class InicioSesion extends javax.swing.JFrame {
             VentanaPrincipal ventana = new VentanaPrincipal(controlador, user, pass);
             ventana.IniciarVentana();
             //JOptionPane.showMessageDialog(null, "Correcto!");
-            this.dispose();
-
+            setVisible(false);
         } else {
             JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error al iniciar sesión", JOptionPane.ERROR_MESSAGE);
         }
