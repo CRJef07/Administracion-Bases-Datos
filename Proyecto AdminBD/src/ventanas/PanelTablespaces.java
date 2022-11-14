@@ -23,7 +23,7 @@ public class PanelTablespaces extends javax.swing.JPanel {
     }
 
     public void crearTablespace() {
-
+        this.usuario = "sys as sydba";
         JFileChooser fileChooser = new JFileChooser("C:/OracleXE/app/oracle/oradata/XE");//Abre una ventana para guardar el archivo
         fileChooser.setFileFilter(new FileNameExtensionFilter("Database File", "dbf"));//Filtra la extensión .dbf
 
