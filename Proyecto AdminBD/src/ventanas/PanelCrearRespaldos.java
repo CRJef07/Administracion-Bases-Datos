@@ -13,19 +13,19 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class PanelCrearRespaldos extends javax.swing.JPanel {
-    
+
     Controlador controlador = null;
     private String usuario = null;
     private String password = null;
     List<String> listDirectorios = new ArrayList();
-    
+
     Runnable run = new Runnable() {
         @Override
         public void run() {
             Exportar();
         }
     };
-    
+
     public PanelCrearRespaldos(Controlador controlador, String usuario, String password) {
         this.controlador = controlador;
         this.usuario = usuario;
@@ -34,45 +34,45 @@ public class PanelCrearRespaldos extends javax.swing.JPanel {
         cargarTablasUsuario();
         cargarDirectorios();
     }
-    
+
     public void cargarDirectorios() {
-        
+
         ResultSet resultado = controlador.cargarDirectorios();
-        
+
         boxDirectorios.removeAllItems();
         listDirectorios.clear();
-        
+
         try {
             while (resultado.next()) {
                 boxDirectorios.addItem(resultado.getString(1));
                 listDirectorios.add(resultado.getString(2));
             }
             boxDirectorios.setSelectedIndex(-1);
-            
+
         } catch (SQLException ex) {
             System.err.println("ERROR SQLException:  " + ex);
         }
     }
-    
+
     public void cargarTablasUsuario() {
-        
+        controlador.getConexion(usuario, password);
         ResultSet resultado = controlador.cargarTablasUsuario(usuario);
-        
+
         boxTablas.removeAllItems();
-        
+
         try {
             while (resultado.next()) {
                 boxTablas.addItem(resultado.getString("TABLE_NAME"));
             }
             boxTablas.setSelectedIndex(-1);
-            
+
         } catch (SQLException ex) {
             System.err.println("ERROR SQLException:  " + ex);
         }
     }
-    
+
     private void Exportar() {
-        
+
         String s = null;
         String tipoRespaldo = "";//el tipo de respaldo que se hará
         String dir = "";//directorio donde se guardara el respaldo
@@ -86,21 +86,21 @@ public class PanelCrearRespaldos extends javax.swing.JPanel {
         if (radioFull.isSelected()) {
             tipoRespaldo = "FULL=Y";
         }
-        
+
         dir = boxDirectorios.getSelectedItem().toString();
-        
+
         try {
-            
+
             String comando;
             comando = "cmd /c " + "EXPDP" + " " + usuario + "/" + password + " " + tipoRespaldo + " DIRECTORY = " + dir
                     + " DUMPFILE = " + txtNombreArchivo.getText() + ".dmp LOGFILE = " + txtNombreArchivo.getText() + "_log.log";
 
             //Ejecutamos el comando
             Process p = Runtime.getRuntime().exec(comando);
-            
+
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(
                     p.getInputStream()));
-            
+
             BufferedReader stdError = new BufferedReader(new InputStreamReader(
                     p.getErrorStream()));
 
@@ -114,10 +114,10 @@ public class PanelCrearRespaldos extends javax.swing.JPanel {
                 areaComando.append(s + "\n");
                 //JOptionPane.showMessageDialog(null, s);
             }
-            
+
             lblTipoElegido.setText("El respaldo ha terminado");
             JOptionPane.showMessageDialog(null, " La Exportación ha concluido..", "Proceso Completado", JOptionPane.INFORMATION_MESSAGE);
-            
+
         } catch (IOException e) {
             System.out.println("Excepción: ");
             e.printStackTrace();
@@ -125,32 +125,32 @@ public class PanelCrearRespaldos extends javax.swing.JPanel {
         }
         btnCrear.setEnabled(true);
     }
-    
+
     public boolean validaciones() {
-        
+
         if (!radioTablas.isSelected() && !radioSchema.isSelected() && !radioFull.isSelected()) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar el tipo de respaldo", "", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        
+
         if (radioTablas.isSelected() && boxTablas.getSelectedIndex() == -1) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar la tabla a respaldar", "", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        
+
         if (boxDirectorios.getSelectedIndex() == -1) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un directorio", "", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        
+
         if (txtNombreArchivo.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Debe darle un nombre al archivo de respaldo", "", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        
+
         return true;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -306,7 +306,7 @@ public class PanelCrearRespaldos extends javax.swing.JPanel {
     }//GEN-LAST:event_boxDirectoriosItemStateChanged
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        
+
         if (validaciones()) {
             String mensaje = "Creando respaldo "; //Variable con el mensaje "Creando respaldo "
 

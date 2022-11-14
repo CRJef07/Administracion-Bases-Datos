@@ -10,12 +10,12 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 
 public class PanelRecuperarRespaldos extends javax.swing.JPanel {
-    
+
     Controlador controlador = null;
     private String usuario = null;
     private String password = null;
     List<String> listDirectorios = new ArrayList<String>();
-    
+
     public PanelRecuperarRespaldos(Controlador controlador, String usuario, String password) {
         this.controlador = controlador;
         this.usuario = usuario;
@@ -24,28 +24,28 @@ public class PanelRecuperarRespaldos extends javax.swing.JPanel {
         cargarTablasUsuario();
         cargarDirectorios();
     }
-    
+
     Runnable run = new Runnable() {
         @Override
         public void run() {
             Importar();
         }
     };
-    
+
     public void cargarDirectorios() {
         ResultSet resultado = controlador.cargarDirectorios();
-        
+
         boxDirectorios.removeAllItems();
         listDirectorios.clear();
-        
+
         try {
-            
+
             while (resultado.next()) {
                 boxDirectorios.addItem(resultado.getString(1));
                 listDirectorios.add(resultado.getString(2));
             }
             boxDirectorios.setSelectedIndex(-1);
-            
+
         } catch (SQLException ex) {
             System.err.println("ERROR: " + ex);
         }
@@ -53,13 +53,13 @@ public class PanelRecuperarRespaldos extends javax.swing.JPanel {
 
     //metodo de cargar directorios
     public void cargarTablasUsuario() {
-        
+        controlador.getConexion(usuario, password);
         ResultSet resultado = controlador.cargarTablasUsuario(usuario);
-        
+
         boxTablas.removeAllItems();
-        
+
         try {
-            
+
             while (resultado.next()) {
                 boxTablas.addItem(resultado.getString("TABLE_NAME"));
             }
@@ -68,9 +68,9 @@ public class PanelRecuperarRespaldos extends javax.swing.JPanel {
             System.err.println("ERROR: " + ex);
         }
     }
-    
+
     private void Importar() {
-        
+
         String s = null;
         String tipoRespaldo = "";//el tipo de respaldo que se hará
         String dir = "";//directorio donde se guardara el respaldo
@@ -84,21 +84,21 @@ public class PanelRecuperarRespaldos extends javax.swing.JPanel {
         if (radioFull.isSelected()) {
             tipoRespaldo = "FULL=Y";
         }
-        
+
         dir = boxDirectorios.getSelectedItem().toString();
-        
+
         try {
-            
+
             String comando;
             comando = "cmd /c " + "IMPDP" + " " + usuario + "/" + password + " " + tipoRespaldo + " DIRECTORY = " + dir
                     + " DUMPFILE = " + jtextRuta.getText() + " LOGFILE = " + jtextRuta.getText() + ".log";
 
             // Ejcutamos el comando
             Process p = Runtime.getRuntime().exec(comando);
-            
+
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(
                     p.getInputStream()));
-            
+
             BufferedReader stdError = new BufferedReader(new InputStreamReader(
                     p.getErrorStream()));
 
@@ -111,42 +111,42 @@ public class PanelRecuperarRespaldos extends javax.swing.JPanel {
             while ((s = stdError.readLine()) != null) {
                 areaComando.append(s + "\n");
             }
-            
+
             lblTipoElegido.setText("La Importación ha concluido");
             JOptionPane.showMessageDialog(null, " La importación ha concluido..", "Proceso Completado", JOptionPane.INFORMATION_MESSAGE);
-            
+
         } catch (IOException e) {
             System.out.println("Excepción: ");
             e.printStackTrace();
             System.exit(-1);
         }
     }
-    
+
     public boolean validaciones() {
-        
+
         if (!radioTablas.isSelected() && !radioSchema.isSelected() && !radioFull.isSelected()) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar el tipo de respaldo", "", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        
+
         if (radioTablas.isSelected() && boxTablas.getSelectedIndex() == -1) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar la tabla a respaldar", "", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        
+
         if (boxDirectorios.getSelectedIndex() == -1) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un directorio", "", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        
+
         if (jtextRuta.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Seleccione un archivo de respaldo", "", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        
+
         return true;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -331,14 +331,14 @@ public class PanelRecuperarRespaldos extends javax.swing.JPanel {
         switch (seleccion) {
             case JFileChooser.APPROVE_OPTION: //Seleccionó cargar
                 break;
-            
+
             case JFileChooser.CANCEL_OPTION: //Seleccionó cancelar o cerró ventana
                 break;
-            
+
             case JFileChooser.ERROR_OPTION: //Viene aquí si hay error
                 break;
         }
-        
+
         File archivo = explorador.getSelectedFile(); //"archivo" tiene lo seleccionado
         String ruta = archivo.getName(); //"ruta" tiene la ruta del archivo seleccionado
         //System.out.println("La ruta del fichero es: "+ruta);

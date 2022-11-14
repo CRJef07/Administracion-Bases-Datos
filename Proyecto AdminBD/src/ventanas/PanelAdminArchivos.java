@@ -31,7 +31,7 @@ public class PanelAdminArchivos extends javax.swing.JPanel {
     }
 
     public void cargarDirectorios() {
-
+        controlador.getConexion(usuario, password);
         ResultSet resultado = controlador.cargarDirectorios();
 
         boxDirectorios.removeAllItems();
@@ -191,7 +191,7 @@ public class PanelAdminArchivos extends javax.swing.JPanel {
     }//GEN-LAST:event_boxDirectoriosItemStateChanged
 
     private void btnCrearDirectorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearDirectorioActionPerformed
-
+        controlador.getConexion(usuario, password);
         if (comboUsuarios.getSelectedIndex() != -1) {
             JFileChooser dirCarpeta = new JFileChooser();
             dirCarpeta.showSaveDialog(null);
