@@ -75,6 +75,7 @@ public class PanelPerformance extends javax.swing.JPanel {
     }
 
     public void cargarTablasUsuario() {
+        controlador.getConexion(usuario, password);
         ResultSet resultado = controlador.cargarTablasUsuario(usuario);
         cbTablas.removeAllItems();
 
