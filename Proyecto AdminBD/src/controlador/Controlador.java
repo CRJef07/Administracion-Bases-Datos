@@ -21,7 +21,7 @@ public class Controlador {
     public boolean getConexion(String user, String pass) {
         try {
             if (user.equals("sys") || user.equals("SYS") || user.equals("SYSTEM") || user.equals("system")) {
-                user = user + " as sysdba";
+                user = "sys as SYSDBA";
             }
 
             Class.forName(DRIVER);

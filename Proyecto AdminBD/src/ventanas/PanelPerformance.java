@@ -147,7 +147,7 @@ public class PanelPerformance extends javax.swing.JPanel {
                 rbSchemaActionPerformed(evt);
             }
         });
-        add(rbSchema, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 100, 20));
+        add(rbSchema, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 100, 20));
 
         rbTabla.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         rbTabla.setText("Tabla");
@@ -156,7 +156,7 @@ public class PanelPerformance extends javax.swing.JPanel {
                 rbTablaActionPerformed(evt);
             }
         });
-        add(rbTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 60, 20));
+        add(rbTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 60, 20));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

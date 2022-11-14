@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.apache.commons.io.FilenameUtils;
 
@@ -23,6 +24,10 @@ public class PanelTablespaces extends javax.swing.JPanel {
     }
 
     public void crearTablespace() {
+        if (usuario.equals("sys") || usuario.equals("SYS") || usuario.equals("SYSTEM") || usuario.equals("system")) {
+            usuario = "sys as SYSDBA";
+        }
+        controlador.getConexion(usuario, password);
         JFileChooser fileChooser = new JFileChooser("C:/OracleXE/app/oracle/oradata/XE");//Abre una ventana para guardar el archivo
         fileChooser.setFileFilter(new FileNameExtensionFilter("Database File", "dbf"));//Filtra la extensión .dbf
 
@@ -53,7 +58,7 @@ public class PanelTablespaces extends javax.swing.JPanel {
     }
 
     public void crearTablespaceTemporal() {
-
+        controlador.getConexion(usuario, password);
         JFileChooser fileChooser = new JFileChooser("C:/OracleXE/app/oracle/oradata/XE");//Abre una ventana para guardar el archivo
         fileChooser.setFileFilter(new FileNameExtensionFilter("Database File", "dbf"));//Filtra la extensión .dbf
 
@@ -84,7 +89,7 @@ public class PanelTablespaces extends javax.swing.JPanel {
     }
 
     public void cambiarTamanoDatafile() {
-
+        controlador.getConexion(usuario, password);
         JFileChooser fileChooser = new JFileChooser("C:/OracleXE/app/oracle/oradata/XE");//Abre una ventana para guardar el archivo
         fileChooser.setFileFilter(new FileNameExtensionFilter("Database File", "dbf"));//Filtra la extensión .dbf
 
@@ -218,14 +223,34 @@ public class PanelTablespaces extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearTablespaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearTablespaceActionPerformed
+        int valor = (Integer) jSpinner2.getValue();
+
+        if (valor < 1) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un valor mayor a 0");
+            return;
+        }
         crearTablespace();
     }//GEN-LAST:event_btnCrearTablespaceActionPerformed
 
     private void btnCrearTablespaceTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearTablespaceTempActionPerformed
+        int valor = (Integer) jSpinner1.getValue();
+
+        if (valor < 1) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un valor mayor a 0");
+            return;
+        }
+
         crearTablespaceTemporal();
     }//GEN-LAST:event_btnCrearTablespaceTempActionPerformed
 
     private void btnSelectDBFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectDBFActionPerformed
+        int valor = (Integer) jSpinner3.getValue();
+
+        if (valor < 1) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un valor mayor a 0");
+            return;
+        }
+
         cambiarTamanoDatafile();
     }//GEN-LAST:event_btnSelectDBFActionPerformed
 
