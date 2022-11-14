@@ -16,8 +16,6 @@ public class PanelTunning extends javax.swing.JPanel {
     private String usuario = null;
     private String password = null;
 
-    List<String> directorios = new ArrayList();
-
     public PanelTunning(Controlador controlador, String usuario, String password) {
         this.controlador = controlador;
         this.usuario = usuario;
@@ -330,13 +328,10 @@ public class PanelTunning extends javax.swing.JPanel {
     }//GEN-LAST:event_inputTablaActionPerformed
 
     private void btnCrearPlan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPlan1ActionPerformed
-        if (controlador.crearIndice(String.valueOf(inputSchema.getSelectedItem()), String.valueOf(inputTabla.getSelectedItem()), String.valueOf(inputCampo.getSelectedItem()),
-                inputNombre.getText())) {
-            JOptionPane.showMessageDialog(null, "Se ha creado un indice para el campo " + String.valueOf(inputCampo.getSelectedItem())
-                    + " de la tabla " + String.valueOf(inputTabla.getSelectedItem()) + " en el schema " + String.valueOf(inputSchema.getSelectedItem()), "", JOptionPane.INFORMATION_MESSAGE);
+        if (controlador.crearIndice(String.valueOf(inputSchema.getSelectedItem()), String.valueOf(inputTabla.getSelectedItem()), String.valueOf(inputCampo.getSelectedItem()), inputNombre.getText())) {
+            JOptionPane.showMessageDialog(null, "Se ha creado un indice para el campo " + String.valueOf(inputCampo.getSelectedItem()) + " de la tabla " + String.valueOf(inputTabla.getSelectedItem()) + " en el schema " + String.valueOf(inputSchema.getSelectedItem()), "", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "No se logro crear un indice para el campo " + String.valueOf(inputCampo.getSelectedItem())
-                    + " de la tabla " + String.valueOf(inputTabla.getSelectedItem()) + " en el schema " + String.valueOf(inputSchema.getSelectedItem()), "", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se logro crear un indice para el campo " + String.valueOf(inputCampo.getSelectedItem()) + " de la tabla " + String.valueOf(inputTabla.getSelectedItem()) + " en el schema " + String.valueOf(inputSchema.getSelectedItem()), "", JOptionPane.ERROR_MESSAGE);
         }
         llenarGrid2();
     }//GEN-LAST:event_btnCrearPlan1ActionPerformed
