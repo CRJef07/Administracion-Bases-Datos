@@ -2,6 +2,7 @@ package ventanas;
 
 import controlador.Controlador;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 public class PanelOtros extends javax.swing.JPanel {
 
@@ -35,7 +36,7 @@ public class PanelOtros extends javax.swing.JPanel {
         lblTitulo.setBackground(new java.awt.Color(0, 0, 0));
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Administración de archivos de respaldos y directorios");
+        lblTitulo.setText("Más información de la Base de Datos Oracle");
         lblTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 80));
 
@@ -81,6 +82,10 @@ public class PanelOtros extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        if (!usuario.equals("SYS") && !usuario.equals("sys") && !usuario.equals("SYSTEM") && !usuario.equals("system")) {
+            JOptionPane.showMessageDialog(null, "Debe iniciar sesión como SYS ADMIN");
+            return;
+        }
         //areaComando.append( String.format( "%s\n", resultado ));
         //areaComando.setText(resultado.getString);
         //db.conectar(usuario + " as sysdba", contrasena);
