@@ -86,7 +86,6 @@ public class PanelUsuarios extends javax.swing.JPanel {
 
         lblTitulo = new javax.swing.JLabel();
         crearRol = new javax.swing.JLabel();
-        param_header = new javax.swing.JLabel();
         comboUsuarios = new javax.swing.JComboBox<>();
         btnCrearRol = new javax.swing.JButton();
         txtNombreRol1 = new javax.swing.JTextField();
@@ -104,7 +103,6 @@ public class PanelUsuarios extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
-        param_header4 = new javax.swing.JLabel();
         crearRol3 = new javax.swing.JLabel();
         txtNombreUsuario = new javax.swing.JTextField();
         btnCrearUsuario = new javax.swing.JButton();
@@ -122,11 +120,7 @@ public class PanelUsuarios extends javax.swing.JPanel {
 
         crearRol.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         crearRol.setText("Indique el usuario:");
-        add(crearRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 160, -1));
-
-        param_header.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        param_header.setText("Crear Usuario");
-        add(param_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
+        add(crearRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 490, 160, 30));
 
         comboUsuarios.setBackground(java.awt.Color.darkGray);
         comboUsuarios.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
@@ -143,7 +137,7 @@ public class PanelUsuarios extends javax.swing.JPanel {
                 btnCrearRolActionPerformed(evt);
             }
         });
-        add(btnCrearRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 100, 30));
+        add(btnCrearRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 110, 40));
 
         txtNombreRol1.setBorder(null);
         add(txtNombreRol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 180, 20));
@@ -156,14 +150,14 @@ public class PanelUsuarios extends javax.swing.JPanel {
         comboRoles.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         comboRoles.setForeground(java.awt.Color.white);
         comboRoles.setBorder(null);
-        add(comboRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, 190, 20));
+        add(comboRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, 190, 30));
 
         crearRol1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         crearRol1.setText("Indique el usuario que desea crear:");
-        add(crearRol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
+        add(crearRol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, -1, 30));
 
         txtNombreRol.setBorder(null);
-        add(txtNombreRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 150, 20));
+        add(txtNombreRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 150, 30));
 
         btnRemoverRol.setBackground(new java.awt.Color(255, 102, 102));
         btnRemoverRol.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
@@ -210,25 +204,21 @@ public class PanelUsuarios extends javax.swing.JPanel {
                 btnConsultarActionPerformed(evt);
             }
         });
-        add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, 100, 30));
+        add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 100, 30));
 
         ComboUsuario1.setBackground(java.awt.Color.darkGray);
         ComboUsuario1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         ComboUsuario1.setForeground(java.awt.Color.white);
         ComboUsuario1.setBorder(null);
-        add(ComboUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 190, 20));
+        add(ComboUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 190, 30));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 700, 10));
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 700, 10));
         add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 700, 10));
 
-        param_header4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        param_header4.setText("Crear rol");
-        add(param_header4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
-
         crearRol3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         crearRol3.setText("Indique el rol que desea crear:");
-        add(crearRol3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
-        add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 140, 30));
+        add(crearRol3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, 30));
+        add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 140, 30));
 
         btnCrearUsuario.setBackground(new java.awt.Color(153, 255, 153));
         btnCrearUsuario.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -239,7 +229,7 @@ public class PanelUsuarios extends javax.swing.JPanel {
                 btnCrearUsuarioActionPerformed(evt);
             }
         });
-        add(btnCrearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 120, 30));
+        add(btnCrearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 110, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearRolActionPerformed
@@ -296,10 +286,8 @@ public class PanelUsuarios extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel param_header;
     private javax.swing.JLabel param_header2;
     private javax.swing.JLabel param_header3;
-    private javax.swing.JLabel param_header4;
     private javax.swing.JTextField txtNombreRol;
     private javax.swing.JTextField txtNombreRol1;
     private javax.swing.JTextField txtNombreUsuario;

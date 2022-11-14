@@ -109,7 +109,6 @@ public class PanelPerformance extends javax.swing.JPanel {
         lblTitulo = new javax.swing.JLabel();
         btnGenerarStats = new javax.swing.JButton();
         cbTablas = new javax.swing.JComboBox<>();
-        btnVerStats = new javax.swing.JButton();
         rbSchema = new javax.swing.JRadioButton();
         rbTabla = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -141,19 +140,6 @@ public class PanelPerformance extends javax.swing.JPanel {
         cbTablas.setBorder(null);
         add(cbTablas, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 260, 60));
 
-        btnVerStats.setBackground(java.awt.Color.darkGray);
-        btnVerStats.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        btnVerStats.setForeground(java.awt.Color.white);
-        btnVerStats.setText("Ver Estadisticas");
-        btnVerStats.setBorder(null);
-        btnVerStats.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerStatsActionPerformed(evt);
-            }
-        });
-        add(btnVerStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 140, 30));
-
-        rbSchema.setBackground(new java.awt.Color(255, 255, 255));
         rbSchema.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         rbSchema.setText("Esquema");
         rbSchema.addActionListener(new java.awt.event.ActionListener() {
@@ -161,9 +147,8 @@ public class PanelPerformance extends javax.swing.JPanel {
                 rbSchemaActionPerformed(evt);
             }
         });
-        add(rbSchema, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 100, 60));
+        add(rbSchema, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 100, 20));
 
-        rbTabla.setBackground(new java.awt.Color(255, 255, 255));
         rbTabla.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         rbTabla.setText("Tabla");
         rbTabla.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +156,7 @@ public class PanelPerformance extends javax.swing.JPanel {
                 rbTablaActionPerformed(evt);
             }
         });
-        add(rbTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 100, 60));
+        add(rbTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 60, 20));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -183,17 +168,13 @@ public class PanelPerformance extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 650, 220));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 660, 310));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGenerarStatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarStatsActionPerformed
         this.GenerarEstadisticas();
         this.llenarGrid();
     }//GEN-LAST:event_btnGenerarStatsActionPerformed
-
-    private void btnVerStatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerStatsActionPerformed
-        this.llenarGrid();
-    }//GEN-LAST:event_btnVerStatsActionPerformed
 
     private void rbSchemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSchemaActionPerformed
         this.cbTablas.setEnabled(false);
@@ -206,7 +187,6 @@ public class PanelPerformance extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarStats;
-    private javax.swing.JButton btnVerStats;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbTablas;
     private javax.swing.JScrollPane jScrollPane1;
